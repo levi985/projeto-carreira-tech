@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparação de Perfis GitHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .profile-card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease;
+        }
+        .profile-card:hover {
+            transform: translateY(-2px);
+        }
+        .contribution-cell {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            margin: 1px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Contraste Visual: Perfil Vazio vs. Perfil Vencedor</h1>
+        <p class="text-lg text-gray-600 mb-10 text-center">Use esses mockups para ilustrar o que o recrutador vê em 5 segundos no GitHub.</p>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            
+            <div class="profile-card bg-white p-6 rounded-xl border border-red-200">
+                <h2 class="text-2xl font-semibold text-red-600 mb-6 border-b pb-3">Perfil Vazio/Fraco ❌</h2>
+                
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center text-gray-500 font-bold text-xl">
+                        [Foto]
+                    </div>
+                    <div>
+                        <p class="font-bold text-xl text-gray-800">Candidato Vazio</p>
+                        <p class="text-sm text-gray-500">@usuario_teste_123</p>
+                    </div>
+                </div>
+
+                <div class="mb-6 bg-red-50 p-3 rounded-lg">
+                    <p class="font-semibold text-red-700">Bio: Sem foco claro.</p>
+                    <p class="text-sm text-gray-700 mt-1">"Gosto de tecnologia e estou procurando emprego."</p>
+                </div>
+
+                <h3 class="font-semibold text-lg text-gray-700 mb-3">Atividade de Contribuições (Último Ano)</h3>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <div class="flex flex-wrap opacity-60">
+                        <script>
+                            const emptyColors = ['#ebedf0', '#ebedf0', '#ebedf0', '#ebedf0', '#9be9a8'];
+                            const emptyContainer = document.currentScript.parentNode;
+                            for(let i = 0; i < 30 * 7; i++) {
+                                const color = emptyColors[Math.floor(Math.random() * emptyColors.length)];
+                                const cell = document.createElement('span');
+                                cell.className = 'contribution-cell';
+                                cell.style.backgroundColor = color;
+                                emptyContainer.appendChild(cell);
+                            }
+                        </script>
+                    </div>
+                    <p class="text-xs text-red-500 mt-2">❌ Atividade inconsistente ou inexistente.</p>
+                </div>
+
+                <h3 class="font-semibold text-lg text-gray-700 mt-6 mb-3">Projetos Fixados (Pinned Repos)</h3>
+                <div class="space-y-3">
+                    <div class="p-3 bg-gray-50 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800">projeto-copiado-udemy</p>
+                        <p class="text-sm text-gray-500">Nenhuma descrição. (JavaScript)</p>
+                    </div>
+                    <div class="p-3 bg-gray-50 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800">teste-para-aula</p>
+                        <p class="text-sm text-gray-500">Nenhuma descrição. (Python)</p>
+                    </div>
+                    <p class="text-sm text-red-500">⚠️ *Soft Skill* Falha: Não há documentação (README) ou propósito claro.</p>
+                </div>
+            </div>
+
+            <div class="profile-card bg-white p-6 rounded-xl border border-green-200">
+                <h2 class="text-2xl font-semibold text-green-600 mb-6 border-b pb-3">Perfil Vencedor/Otimizado ✅</h2>
+
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="w-16 h-16 bg-green-200 rounded-full flex items-center justify-center text-green-700 font-bold text-xl">
+                        ✅
+                    </div>
+                    <div>
+                        <p class="font-bold text-xl text-gray-800">Leví Estratégico</p>
+                        <p class="text-sm text-gray-500">@leviestrategista_dev</p>
+                    </div>
+                </div>
+
+                <div class="mb-6 bg-green-50 p-3 rounded-lg">
+                    <p class="font-semibold text-green-700">Bio: Foco e Prova de Valor.</p>
+                    <p class="text-sm text-gray-700 mt-1">"Desenvolvedor Backend (Node.js/TypeScript) | Focado em APIs escaláveis e microsserviços. Resolvo problemas."</p>
+                </div>
+
+                <h3 class="font-semibold text-lg text-gray-700 mb-3">Atividade de Contribuições (Último Ano)</h3>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <div class="flex flex-wrap">
+                        <script>
+                            const strongColors = ['#9be9a8', '#40c463', '#30a14e', '#216e39'];
+                            const strongContainer = document.currentScript.parentNode;
+                            for(let i = 0; i < 30 * 7; i++) {
+                                const isWeak = Math.random() > 0.8;
+                                const color = isWeak ? '#ebedf0' : strongColors[Math.floor(Math.random() * strongColors.length)];
+                                const cell = document.createElement('span');
+                                cell.className = 'contribution-cell';
+                                cell.style.backgroundColor = color;
+                                strongContainer.appendChild(cell);
+                            }
+                        </script>
+                    </div>
+                    <p class="text-xs text-green-500 mt-2">✅ Atividade consistente: Prova de disciplina e aprendizado contínuo.</p>
+                </div>
+
+                <h3 class="font-semibold text-lg text-gray-700 mt-6 mb-3">Projetos Fixados (Pinned Repos)</h3>
+                <div class="space-y-3">
+                    <div class="p-3 bg-white rounded-lg border-l-4 border-green-500 shadow-md">
+                        <p class="font-medium text-gray-800">API-Gestao-Financas-JWT</p>
+                        <p class="text-sm text-gray-600">Microsserviço de autenticação e controle de despesas. Uso de **JWT e PostgreSQL**.</p>
+                    </div>
+                    <div class="p-3 bg-white rounded-lg border-l-4 border-green-500 shadow-md">
+                        <p class="font-medium text-gray-800">Dashboard-Visual-Eleicoes</p>
+                        <p class="text-sm text-gray-600">Projeto de **Data Science** para análise de dados eleitorais. (Python/Pandas).</p>
+                    </div>
+                    <p class="text-sm text-green-500">✨ *Soft Skill* Evidente: Documentação, foco e demonstração de valor claro.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
